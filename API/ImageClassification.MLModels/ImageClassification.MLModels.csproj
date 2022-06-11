@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.Vision" Version="1.7.1" />
+    <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.3.1" />
+  </ItemGroup>
+  <ItemGroup Label="PlantDiseaseClassificationMLModel">
+    <None Include="PlantDiseaseClassificationMLModel.consumption.cs">
+      <DependentUpon>PlantDiseaseClassificationMLModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="PlantDiseaseClassificationMLModel.training.cs">
+      <DependentUpon>PlantDiseaseClassificationMLModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="PlantDiseaseClassificationMLModel.zip">
+      <DependentUpon>PlantDiseaseClassificationMLModel.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="SimpsonsCharactersClassificationMLModel">
+    <None Include="SimpsonsCharactersClassificationMLModel.consumption.cs">
+      <DependentUpon>SimpsonsCharactersClassificationMLModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="SimpsonsCharactersClassificationMLModel.training.cs">
+      <DependentUpon>SimpsonsCharactersClassificationMLModel.mbconfig</DependentUpon>
+    </None>
+    <None Include="SimpsonsCharactersClassificationMLModel.zip">
+      <DependentUpon>SimpsonsCharactersClassificationMLModel.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

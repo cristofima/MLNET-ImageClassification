@@ -1,0 +1,20 @@
+<div class="p-fluid p-formgrid p-grid">
+  <form (ngSubmit)="onSubmit()">
+    <div class="p-field p-col-12 p-md-3">
+      <label for="type" class="required">Type</label>
+      <p-dropdown name="type" inputId="type" [options]="types" placeholder="Select a type" [(ngModel)]="type">
+      </p-dropdown>
+    </div>
+    <div class="p-field p-col-12 p-md-3">
+      <label for="image" class="required">Image</label>
+      <p-fileUpload name="image" accept="image/*" [auto]="true" [customUpload]="true" (onRemove)="onRemoveFile()"
+        (uploadHandler)="customUploader($event)"></p-fileUpload>
+    </div>
+    <p-button label="Send" type="submit" [disabled]="type == null || !isFileUploaded"></p-button>
+  </form>
+  <p>Result:</p>
+  <ng-container *ngIf="result">
+    <p>Label: {{result.label}}</p>
+    <p>Confidence: {{result.confidence}}</p>
+  </ng-container>
+</div>
